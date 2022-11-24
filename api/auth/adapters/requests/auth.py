@@ -12,8 +12,8 @@ register_request = auth_namespace .model('RegisterRequest', {
     'last_name': fields.String(required=True),
     'email': fields.String(required=True),
     'password': fields.String(required=True),
-    'dni': fields.String(required=True),
-    'type': fields.String(required=True)
+    'phone': fields.String(required=True),
+    'dni': fields.String(required=True)
 })
 
 forgot_password_request = auth_namespace .model('ForgotPasswordRequest', {

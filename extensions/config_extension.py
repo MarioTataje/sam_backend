@@ -33,6 +33,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{USER}:{PASSWORD}@{SERVER}/{DATABASE}'
     SQLALCHEMY_ECHO = False
     PROPAGATE_EXCEPTIONS = True
+    SECRET_KEY = 'super secret'
 
 
 class TestingConfig(Config):

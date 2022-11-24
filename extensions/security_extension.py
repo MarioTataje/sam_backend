@@ -4,4 +4,5 @@ jwt = JWTManager()
 
 
 def register_security(app):
+
     jwt.init_app(app)

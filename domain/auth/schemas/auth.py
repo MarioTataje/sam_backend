@@ -29,7 +29,7 @@ class LoginSchema(ma.Schema):
 
 class RegisterSchema(ma.Schema):
     class Meta:
-        fields = ("id", "first_name", "last_name", "email", "password", "dni")
+        fields = ("id", "first_name", "last_name", "email", "password", "dni", "phone")
         model = User
 
     @validates_schema()
@@ -39,6 +39,7 @@ class RegisterSchema(ma.Schema):
         last_name = data.get('last_name', None)
         email = data.get('email', None)
         password = data.get('password', None)
+        phone = data.get('phone', None)
         dni = data.get('dni', None)
         if first_name is None:
             errors['first_name'] = 'First Name is required'
@@ -60,6 +61,10 @@ class RegisterSchema(ma.Schema):
             errors['dni'] = 'Dni is required'
         if dni == '':
             errors['dni'] = 'Dni must not be blank'
+        if phone is None:
+            errors['phone'] = 'Phone is required'
+        if phone == '':
+            errors['phone'] = 'Phone must not be blank'
         if errors:
             raise BadRequestException(errors)
 

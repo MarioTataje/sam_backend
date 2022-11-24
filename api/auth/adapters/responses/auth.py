@@ -15,8 +15,8 @@ register_response = auth_namespace .model('RegisterResponse', {
     'first_name': fields.String,
     'last_name': fields.String,
     'email': fields.String,
-    'dni': fields.String,
-    'type': fields.String
+    'phone': fields.String,
+    'dni': fields.String
 })
 
 forgot_password_response = auth_namespace .model('ForgotPasswordResponse', {
